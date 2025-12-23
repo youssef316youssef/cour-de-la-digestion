@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polycopié - Aliments, Digestion et Absorption</title>
+    <style>
+        /* === STYLES GÉNÉRAUX === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', 'Times New Roman', serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* === EN-TÊTE === */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #ecf0f1;
+        }
+        
+        /* === CONTENU PRINCIPAL === */
+        .main-content {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        /* === SECTIONS === */
+        .section {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+        }
+        
+        h3 {
+            color: #2980b9;
+            font-size: 1.5rem;
+            margin: 25px 0 15px;
+        }
+        
+        h4 {
+            color: #16a085;
+            font-size: 1.3rem;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        /* === TABLEAUX DU POLYCOPIE === */
+        .poly-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border: 2px solid #2c3e50;
+            font-size: 0.95rem;
+        }
+        
+        .poly-table th {
+            background-color: #2c3e50;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+            border-right: 1px solid #34495e;
+        }
+        
+        .poly-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #ddd;
+            border-right: 1px solid #eee;
+        }
+        
+        .poly-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .poly-table tr:hover {
+            background-color: #e8f4fc;
+        }
+        
+        /* === BOÎTES SPÉCIALES === */
+        .problem-box {
+            background-color: #e8f4fc;
+            border-left: 5px solid #3498db;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .experiment-box {
+            background-color: #fff8e1;
+            border: 2px solid #f39c12;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 5px;
+        }
+        
+        .result-box {
+            background-color: #e8f5e9;
+            border-left: 5px solid #27ae60;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .conclusion-box {
+            background-color: #f4ecf7;
+            border: 2px solid #8e44ad;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 5px;
+        }
+        
+        /* === LISTES === */
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            padding-left: 5px;
+        }
+        
+        /* === ÉLÉMENTS EN ÉVIDENCE === */
+        .important {
+            background-color: #fffacd;
+            padding: 3px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .keyword {
+            color: #c0392b;
+            font-weight: bold;
+        }
+        
+        /* === FORMULES === */
+        .formula {
+            text-align: center;
+            font-family: 'Cambria', 'Times New Roman', serif;
+            font-size: 1.2rem;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border: 1px dashed #95a5a6;
+        }
+        
+        /* === EXERCICES === */
+        .exercise {
+            background-color: #f9f9f9;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+            border-left: 5px solid #e74c3c;
+        }
+        
+        .answer {
+            background-color: #d5f4e6;
+            padding: 20px;
+            margin-top: 15px;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        .show-answer {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .show-answer:hover {
+            background-color: #2980b9;
+        }
+        
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .main-content {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.7rem;
+            }
+            
+            .poly-table {
+                font-size: 0.85rem;
+                display: block;
+                overflow-x: auto;
+            }
+        }
+        
+        /* === FOOTER === */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            border-top: 1px solid #ddd;
+        }
+        
+        /* === IMPRESSION === */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            
+            header {
+                box-shadow: none;
+                border: 2px solid #2c3e50;
+            }
+            
+            .main-content {
+                box-shadow: none;
+                padding: 20px 0;
+            }
+            
+            .show-answer {
+                display: none;
+            }
+            
+            .answer {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- En-tête -->
+    <header>
+        <h1>LES ALIMENTS, LA DIGESTION ET L'ABSORPTION</h1>
+        <p class="subtitle">Polycopié de 1er Semestre - Sciences de la Vie</p>
+    </header>
+    
+    <!-- Contenu principal -->
+    <div class="main-content">
+        <!-- Introduction -->
+        <section class="section">
+            <h2>Introduction</h2>
+            <p>Pour maintenir l'activité de notre organisme, nous consommons des aliments d'origine animale et d'origine végétale.</p>
+            
+            <div class="problem-box">
+                <h4>Problématiques à résoudre :</h4>
+                <ul>
+                    <li>Quelles sont les composantes des aliments que nous consommons ?</li>
+                    <li>Quelles sont les transformations que subissent ces aliments dans notre tube digestif ?</li>
+                    <li>Quels sont les rôles des aliments ?</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- I. COMPOSITION DES ALIMENTS -->
+        <section class="section">
+            <h2>I. COMPOSITION DES ALIMENTS</h2>
+            
+            <h3>1. Analyse de deux aliments : le pain et le lait</h3>
+            
+            <div class="experiment-box">
+                <h4>Activité : Tests de composition</h4>
+                <p>Le tableau ci-dessous représente les manipulations qui permettent de mettre en évidence les compositions minérales et organiques de l'aliment :</p>
+                
+                <table class="poly-table">
+                    <thead>
+                        <tr>
+                            <th>Constituants de base</th>
+                            <th>Mise en évidence (tests)</th>
+                            <th>Résultats</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="3"><strong>Constituants minéraux</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Eau</td>
+                            <td>Par chauffage</td>
+                            <td>Vapeur d'eau (buée) et gouttelettes d'eau sur la paroi du tube à essai</td>
+                        </tr>
+                        <tr>
+                            <td>Sels de chlorures</td>
+                            <td>Par ajout du nitrate d'argent</td>
+                            <td>Formation de précipité blanc qui noircit à la lumière</td>
+                        </tr>
+                        <tr>
+                            <td>Sels de calcium</td>
+                            <td>Par ajout de l'oxalate d'ammonium</td>
+                            <td>Formation de précipité blanc</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><strong>Constituants organiques</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Glucose (sucre réducteur)</td>
+                            <td>Par ajout de la liqueur de Fehling au filtrat avec chauffage</td>
+                            <td>Formation de précipité rouge brique</td>
+                        </tr>
+                        <tr>
+                            <td>Amidon</td>
+                            <td>Par ajout de gouttes d'eau iodée</td>
+                            <td>Tâche bleu-violet</td>
+                        </tr>
+                        <tr>
+                            <td>Protides</td>
+                            <td>Ajout de l'acide nitrique</td>
+                            <td>Tâche jaune</td>
+                        </tr>
+                        <tr>
+                            <td>Lipides</td>
+                            <td>Frotter l'aliment sur une feuille de papier</td>
+                            <td>Tâche translucide qui ne disparaît pas avec la chaleur</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="result-box">
+                <h4>Résultats pour le PAIN :</h4>
+                <ul>
+                    <li><span class="important">Vapeur d'eau et gouttelettes</span> → Conclusion : Le pain contient de l'eau</li>
+                    <li><span class="important">Précipité blanc qui noircit à la lumière</span> → Conclusion : Le pain contient les sels de chlorure</li>
+                    <li><span class="important">Précipité rouge brique</span> → Conclusion : Le pain contient un sucre simple (glucose)</li>
+                    <li><span class="important">Tache bleu violacé avec eau iodée</span> → Conclusion : Le pain contient de l'amidon</li>
+                </ul>
+            </div>
+            
+            <div class="result-box">
+                <h4>Résultats pour le LAIT :</h4>
+                <ul>
+                    <li><span class="important">Vapeur d'eau et gouttelettes</span> → Conclusion : Le lait contient de l'eau</li>
+                    <li><span class="important">Précipité blanc avec nitrate d'argent</span> → Conclusion : Le lait contient des sels de chlorure</li>
+                    <li><span class="important">Précipité blanc avec oxalate d'ammonium</span> → Conclusion : Le lait contient des sels de calcium</li>
+                    <li><span class="important">Précipité rouge brique avec liqueur de Fehling</span> → Conclusion : Le lait contient un sucre réducteur</li>
+                    <li><span class="important">Coloration jaune avec acide nitrique</span> → Conclusion : Le lait contient des protides</li>
+                    <li><span class="important">Tache translucide sur papier</span> → Conclusion : Le lait contient des lipides</li>
+                </ul>
+            </div>
+            
+            <div class="conclusion-box">
+                <h4>Conclusions générales :</h4>
+                <ul>
+                    <li>En analysant les compositions du pain et du lait, nous concluons qu'ils sont composés d'un groupe d'aliments simple : <span class="keyword">l'eau, les sels minéraux et les substances organiques</span> (lipides, protéines, glucides et les vitamines).</li>
+                    <li>Les aliments, tels que le pain, le lait, les légumes, les fruits et les viandes, sont des <span class="keyword">aliments composés</span> car ils contiennent des aliments simples.</li>
+                    <li><span class="keyword">Aliment simple</span> : composé essentiellement d'une seule catégorie de nutriments organique (glucides, lipides, protides ou vitamines) ou minérale (sel de chlorure, sel de calcium, …).</li>
+                    <li><span class="keyword">Aliment composé</span> : composé au moins de deux aliments simples (ex. : pain, lait, poisson, …).</li>
+                </ul>
+            </div>
+            
+            <h3>2. Exercice d'application</h3>
+            
+            <div class="exercise">
+                <p>Tableau de composition nutritionnelle :</p>
+                
+                <table class="poly-table">
+                    <thead>
+                        <tr>
+                            <th>Aliments</th>
+                            <th>Glucides (g)</th>
+                            <th>Protides (g)</th>
+                            <th>Lipides (g)</th>
+                            <th>Eau (g)</th>
+                            <th>Calcium (mg)</th>
+                            <th>Phosphores (mg)</th>
+                            <th>Fer (mg)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lait – Yaourt</td>
+                            <td>5</td>
+                            <td>3,5</td>
+                            <td>3</td>
+                            <td>87</td>
+                            <td>125</td>
+                            <td>90</td>
+                            <td>0,1</td>
+                        </tr>
+                        <tr>
+                            <td>Fromage</td>
+                            <td>0</td>
+                            <td>3,4</td>
+                            <td>1,5</td>
+                            <td>90</td>
+                            <td>140</td>
+                            <td>70</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Viande de bœuf</td>
+                            <td>0,5</td>
+                            <td>18</td>
+                            <td>10</td>
+                            <td>70</td>
+                            <td>10</td>
+                            <td>206</td>
+                            <td>2,3</td>
+                        </tr>
+                        <tr>
+                            <td>Volailles</td>
+                            <td>0</td>
+                            <td>21</td>
+                            <td>8</td>
+                            <td>71</td>
+                            <td>12</td>
+                            <td>200</td>
+                            <td>1,1</td>
+                        </tr>
+                        <tr>
+                            <td>Sardine</td>
+                            <td>0</td>
+                            <td>17,6</td>
+                            <td>7,5</td>
+                            <td>73</td>
+                            <td>333</td>
+                            <td>250</td>
+                            <td>1,3</td>
+                        </tr>
+                        <tr>
+                            <td>Œufs</td>
+                            <td>0,6</td>
+                            <td>13</td>
+                            <td>12</td>
+                            <td>73</td>
+                            <td>55</td>
+                            <td>500</td>
+                            <td>2,8</td>
+                        </tr>
+                        <tr>
+                            <td>Pain</td>
+                            <td>50</td>
+                            <td>8</td>
+                            <td>1,2</td>
+                            <td>36</td>
+                            <td>50</td>
+                            <td>90</td>
+                            <td>1,5</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p><strong>Questions :</strong></p>
+                <ol>
+                    <li>Dégagez du tableau un exemple d'aliment simple.</li>
+                    <li>Pourquoi le lait, les viandes, le pain et les œufs sont considérés comme aliments composés ?</li>
+                </ol>
+                
+                <button class="show-answer" onclick="toggleAnswer('answer1')">Voir les réponses</button>
+                
+                <div id="answer1" class="answer">
+                    <p><strong>Réponses :</strong></p>
+                    <ol>
+                        <li>Exemples d'aliments simples : glucides, protides, lipides, calcium, …</li>
+                        <li>Le lait, les viandes, le pain et les œufs sont considérés comme aliments composés, car ils sont constitués de plusieurs aliments simples.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        
+        <!-- II. LA DIGESTION DES ALIMENTS -->
+        <section class="section">
+            <h2>II. LA DIGESTION DES ALIMENTS</h2>
+            
+            <h3>1. Historique sur la digestion</h3>
+            
+            <div class="experiment-box">
+                <h4>Expérience in vivo de Réaumur (1750) :</h4>
+                <p>Le naturaliste Français Réaumur a fait avaler à une buse (oiseau) un tube en fer ouvert aux deux bouts, contenant un morceau de viande. Après quelques heures, l'oiseau recrache le tube.</p>
+                <p><strong>Observation :</strong> Le tube est intact, sans aucune trace de frottements sur sa surface cependant, la viande qu'il contient a perdu sa consistance et s'est transformée en bouillie.</p>
+            </div>
+            
+            <div class="experiment-box">
+                <h4>Expérience in vitro de Spallanzani (1780) :</h4>
+                <p>Le biologiste Italien Lazzaro Spallanzani poursuit les travaux de Réaumur, il a mis de la viande et de l'eau dans deux tubes. Dans l'un des deux tubes il a ajouté un liquide provenant de son estomac (sue gastrique). Spallanzani a placé les deux tubes au chaud à une température identique à celle du corps humain.</p>
+                <p><strong>Observation :</strong> Au bout de 3 jours, la viande dans le tube contenant le suc gastrique a perdu sa consistance et s'est liquéfiée alors qu'elle ne l'est dans l'autre tube.</p>
+            </div>
+            
+            <div class="exercise">
+                <p><strong>Exploitation du document :</strong></p>
+                <ol>
+                    <li>Dégager, à partir des travaux de Réaumur, ce qui prouve que la digestion des aliments n'est pas un phénomène purement mécanique.</li>
+                    <li>Proposer une hypothèse pour expliquer la transformation de la viande en bouillie dans les tubes utilisés par Réaumur.</li>
+                    <li>A partir des résultats de l'expérience réalisée par Spallanzani, montrer que la digestion est un phénomène essentiellement chimique.</li>
+                    <li>Préciser l'effet de l'action mécanique de la digestion.</li>
+                </ol>
+                
+                <button class="show-answer" onclick="toggleAnswer('answer2')">Voir les réponses</button>
+                
+                <div id="answer2" class="answer">
+                    <p><strong>Réponses :</strong></p>
+                    <ol>
+                        <li>La transformation de la viande contenue à l'intérieur de tube en fer en bouillie sans intervention ni de force et ni de mouvements.</li>
+                        <li>La transformation de la viande en bouillie est faite par réactions chimiques.</li>
+                        <li>La digestion de la viande est effectuée par le suc gastrique (liquide sécrété par l'estomac).</li>
+                        <li>L'action mécanique de la digestion facilite la digestion chimique des aliments dans le tube digestif.</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="conclusion-box">
+                <h4>Conclusion :</h4>
+                <p>La digestion est l'ensemble des transformations mécanique et chimique que subissent les aliments dans le tube digestif.</p>
+            </div>
+            
+            <h3>2. Mise en évidence de la digestion de l'amidon dans la bouche</h3>
+            
+            <div class="experiment-box">
+                <h4>Problème :</h4>
+                <p>Le pain est un aliment composé riche en amidon. On mastique un morceau de pain dans la bouche pendant plusieurs minutes, il prend légèrement un gout sucré.</p>
+                
+                <h4>Hypothèse :</h4>
+                <p>"Dans la bouche, la présence de certaines substances dans la salive favorise la transformation de l'amidon en sucre sucré".</p>
+                
+                <h4>Expérience :</h4>
+                <p>On prépare un tube contenant un mélange d'eau et d'amidon cuit : empois d'amidon. C'est le tube (1) : tube témoin.</p>
+                <p>On préparer un autre tube contenant l'empois d'amidon et un peu de salive fraîche (tube 2).</p>
+                <p>Après 20 minutes au bain Marie à 37°C, on relève dans chaque tube une petite quantité de liquide qu'on teste à l'eau iodée et à la liqueur de Fehling.</p>
+                
+                <table class="poly-table">
+                    <thead>
+                        <tr>
+                            <th>Tube</th>
+                            <th>Test eau iodée</th>
+                            <th>Test liqueur de Fehling</th>
+                            <th>Interprétation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tube (1) : Empois d'amidon seul</td>
+                            <td>Coloration bleu-violet</td>
+                            <td>Pas de précipité rouge brique</td>
+                            <td>Présence de l'amidon : Absence du sucre réducteur (Maltose)</td>
+                        </tr>
+                        <tr>
+                            <td>Tube (2) : Empois d'amidon + salive fraîche</td>
+                            <td>Pas de coloration bleu-violet</td>
+                            <td>Précipité rouge brique</td>
+                            <td>Absence de l'amidon : Présence du sucre réducteur (Maltose)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="result-box">
+                <h4>Interprétation des résultats :</h4>
+                <p>A partir des expériences précédentes, nous concluons que la salive contient une substance qui permet en présence d'eau et à une température de 37°C la transformation de l'amidon (grosses molécules et goût non sucré), en petites molécules de maltose (sucre simple au goût sucré).</p>
+            </div>
+            
+            <div class="experiment-box">
+                <h4>Mise en évidence de la substance en question :</h4>
+                
+                <table class="poly-table">
+                    <thead>
+                        <tr>
+                            <th>Eléments de la salive</th>
+                            <th>Réaction avec amidon</th>
+                            <th>Glandes salivaires</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Eau (99%)</td>
+                            <td>-</td>
+                            <td rowspan="4">Glandes salivaires mineures présentes partout dans la bouche<br><br>
+                            Glande sublinguale<br><br>
+                            Glande sous-mandibulaire</td>
+                        </tr>
+                        <tr>
+                            <td>Sels minéraux (1%)</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Amylase salivaire (0,1%)</td>
+                            <td>+</td>
+                        </tr>
+                        <tr>
+                            <td>Mucus</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><small>Légende : - : pas de transformation de l'amidon en sucre réducteur | + : Transformation de l'amidon en sucre réducteur</small></p>
+            </div>
+            
+            <div class="exercise">
+                <p><strong>Question :</strong> Déterminer l'élément chimique actif (qui réagit avec l'amidon) contenu dans la salive et qui catalyse la transformation de l'amidon en sucre réducteur.</p>
+                
+                <button class="show-answer" onclick="toggleAnswer('answer3')">Voir la réponse</button>
+                
+                <div id="answer3" class="answer">
+                    <p><strong>Réponse :</strong> le seul élément contenu dans la salive et qui transforme l'amidon en sucre réducteur est : l'amylase salivaire (c'est une enzyme digestive).</p>
+                </div>
+            </div>
+            
+            <div class="conclusion-box">
+                <h4>Définition d'une enzyme :</h4>
+                <p>Élément chimique de nature protéique qui catalyse une réaction chimique. (ex. L'amylase salivaire qui catalyse la réaction de simplification moléculaire de l'amidon en maltose).</p>
+                
+                <div class="formula">
+                    Amidon + amylase salivaire → maltose + amylase salivaire
+                </div>
+                
+                <p><strong>Conclusion :</strong> Au niveau la bouche, les aliments se transforment en petits morceaux sous l'action mécanique des dents (mastication) et de la langue (brassage et malaxation) et subissent l'action chimique par l'enzyme amylase salivaire contenue dans la salive et qui transforme l'amidon en sucre simple appelé maltose.</p>
+            </div>
+            
+            <h3>3. Mise en évidence de la digestion dans l'estomac</h3>
+            
+            <div class="experiment-box">
+                <p>A la fin de la digestion dans la bouche le bol alimentaire est formé, ce dernier est acheminé vers l'estomac en traversant l'œsophage. On appelle déglutition le déplacement du bol alimentaire à travers l'œsophage.</p>
+                
+                <h4>Analyse du bol alimentaire avant et après le passage dans l'estomac :</h4>
+                
+                <table class="poly-table">
+                    <thead>
+                        <tr>
+                            <th>Composition de bol avant d'arriver à l'estomac</th>
+                            <th>Composition du bol alimentaire à la sortie de l'estomac</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Eau</td>
+                            <td>Eau</td>
+                        </tr>
+                        <tr>
+                            <td>Sels minéraux</td>
+                            <td>Sels minéraux</td>
+                        </tr>
+                        <tr>
+                            <td>Amidon</td>
+                            <td>Amidon</td>
+                        </tr>
+                        <tr>
+                            <td>Maltose</td>
+                            <td>Maltose</td>
+                        </tr>
+                        <tr>
+                            <td>Protides</td>
+                            <td>Protides<br>Polypeptides</td>
+                        </tr>
+                        <tr>
+                            <td>Lipides</td>
+                            <td>Lipides</td>
+                        </tr>
+                        <tr>
+                            <td>Salive</td>
+                            <td>Salive<br>Suc gastrique (Pepsine + HCl)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="exercise">
+                <p><strong>Questions :</strong></p>
+                <ol>
+                    <li>Quelles sont les transformations que subisse le bol alimentaire dans l'estomac ?</li>
+                    <li>Quel est l'origine de ces transformations ?</li>
+                </ol>
+                
+                <button class="show-answer" onclick="toggleAnswer('answer4')">Voir les réponses</button>
+                
+                <div id="answer4" class="answer">
+                    <p><strong>Réponses :</strong></p>
+                    <ol>
+                        <li>Après avoir passé dans l'estomac, le bol alimentaire subit ce qui suit :
+                            <ul>
+                                <li>Apparition de polypeptide</li>
+                                <li>Apparition du suc gastrique (Pepsine + HCl)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li>Suc gastrique (Pepsine + HCl) : produit par la paroi de l'estomac</li>
+                                <li>Les polypeptides sont le résultat de la digestion chimique des protides</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="conclusion-box">
+                <h4>Conclusion :</h4>
+                <p>Au niveau de l'estomac, une partie des protides est transformée en molécules simples, appelé polypeptides, en présence d'eau et d'acide chlorhydrique (HCl) sécrété par l'estomac, cette réaction chimique et catalysée par l'enzyme pepsine (présente dans le suc gastrique), qui agit en milieu acide et à la température corporelle (37°C).</p>
+                
+                <div class="formula">
+                    Protéine + pepsine → polypeptides + pepsine
+                </div>
+            </div>
+            
+            <h3>4. Mise en évidence de la digestion dans l'intestin grêle</h3>
+            
+            <div class="experiment-box">
+                <h4>Activité :</h4>
+                <p>Le tableau suivant représente l'analyse du chyme à la sortie de l'estomac et après avoir resté dans l'intestin grêle :</p>
+                
+                <table class="poly-table">
+                    <thead>
+                        <tr>
+                            <th>Composition du chyme à la sortie de l'estomac</th>
+                            <th>Composition du chyme après quelques heures dans l'intestin grêle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Eau</td>
+                            <td>Eau</td>
+                        </tr>
+                        <tr>
+                            <td>Sels minéraux</td>
+                            <td>Sels minéraux</td>
+                        </tr>
+                        <tr>
+                            <td>HCl</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Amidon</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Maltose</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Polypeptides</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Protides</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Lipides</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Vitamines</td>
+                            <td>Vitamines</td>
+                        </tr>
+                        <tr>
+                            <td>Suc gastrique</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>Glucose</td>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>Acides aminés</td>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>Acide gras<br>Glycérol</td>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>Suc intestinal<br>Suc Pancréatique<br>Bile (liquide de la vésicule biliaire)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p><strong>Remarque :</strong> Au niveau du duodénum (segment initial de l'intestin grêle), disparition de l'amidon, du maltose, des protides, des polypeptides et des lipides contre l'apparition de glucose, d'acides aminés, d'acides gras et de glycérol, et autres.</p>
+            </div>
+            
+            <div class="exercise">
+                <p><strong>Question :</strong> A partir des résultats de cette analyse, déterminez les transformations majeurs que subissent les aliments dans l'intestin grêle.</p>
+                
+                <button class="show-answer" onclick="toggleAnswer('answer5')">Voir la réponse</button>
+                
+                <div id="answer5" class="answer">
+                    <p><strong>Réponse :</strong> Au niveau du l'intestin grêle, on constate les transformations suivantes :</p>
+                    <ul>
+                        <li>L'amidon et le maltose se transforment en → glucose</li>
+                        <li>Les protéines, les polypeptides se transforment en → acides aminés</li>
+                        <li>Les lipides se transforment en → acides gras et de glycérol</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="conclusion-box">
+                <h4>Conclusion :</h4>
+                <p>Au niveau de l'intestin grêle, le reste d'amidon et le maltose sont transformés en glucose, le reste de protides et les polypeptides sont transformés en acides aminés et les lipides sont transformés en glycérol et acides gras.</p>
+                <p>On note aussi que l'eau, les sels minéraux et les vitamines ne subissent aucune transformation, car ils sont déjà des molécules simples.</p>
+                <p>L'ensemble glucose, acides aminés, glycérol et acides gras, l'eau, les sels minéraux et les vitamines forment ce qu'on appelle les nutriments.</p>
+            </div>
+            
+            <h3>5. Les enzymes digestives et leurs rôles</h3>
+            
+            <table class="poly-table">
+                <thead>
+                    <tr>
+                        <th>Suc digestif</th>
+                        <th>Volume (par jour)</th>
+                        <th>Enzymes contenues</th>
+                        <th>Rôles</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Glandes salivaires</td>
+                        <td>1,5 L</td>
+                        <td>Amylase salivaire</td>
+                        <td>Digestion de l'amidon en maltose</td>
+                    </tr>
+                    <tr>
+                        <td>Suc gastrique</td>
+                        <td>2 L</td>
+                        <td>Protéase (pepsine)</td>
+                        <td>Digestion des protéines en polypeptides</td>
+                    </tr>
+                    <tr>
+                        <td>Bile</td>
+                        <td>0,5 L</td>
+                        <td>(Pas d'enzymes)<br>Sels biliaires</td>
+                        <td>Émulsification des lipides en gouttelettes pour faciliter leur simplification</td>
+                    </tr>
+                    <tr>
+                        <td>Suc pancréatique</td>
+                        <td>2 L</td>
+                        <td>Amylase pancréatique<br>Protéase (trypsine)<br>Peptidase</td>
+                        <td>Digestion des glucides, protéines et peptides</td>
+                    </tr>
+                    <tr>
+                        <td>Suc intestinal</td>
+                        <td>1,5 L</td>
+                        <td>Maltase<br>Peptidase<br>Lipase</td>
+                        <td>Digestion terminale en nutriments simples</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="exercise">
+                <p><strong>Question :</strong> Quelle est l'importance des enzymes qui existe dans les différents niveaux de système digestif ?</p>
+                
+                <button class="show-answer" onclick="toggleAnswer('answer6')">Voir la réponse</button>
+                
+                <div id="answer6" class="answer">
+                    <p><strong>Réponse :</strong> l'importance des enzymes digestives réside dans la simplification moléculaire des aliments pour obtenir les nutriments dont le corps a besoin pour ses activités.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- III. L'ABSORPTION INTESTINALE -->
+        <section class="section">
+            <h2>III. L'ABSORPTION INTESTINALE</h2>
+            <h3>(PASSAGE DES NUTRIMENTS DANS LE SANG ET LA LYMPHE)</h3>
+            
+            <h4>1. Mise en évidence de l'absorption intestinale</h4>
+            
+            <div class="experiment-box">
+                <h4>Activité :</h4>
+                <p>Le tableau suivant représente le résultat de l'analyse du contenu du tube digestif d'un Homme ayant consommé un repas constitué de glucides, lipides et protides.</p>
+                
+                <p><strong>Observation :</strong> On constate que les % de glucides, lipides et protides restent stables de la bouche à la fin de l'estomac à 100%, mais au début de l'intestin grêle (duodenum) leurs % diminuent progressivement jusqu'à 0%.</p>
+                
+                <p><strong>Document complémentaire :</strong> Mesure de la quantité des nutriments dans le sang entrant et dans le sang sortant de l'intestin grêle après un repas :</p>
+                
+                <table class="poly-table">
+                    <thead>
+                        <tr>
+                            <th>Nutriments</th>
+                            <th>Sang entrant dans l'intestin grêle</th>
+                            <th>Sang sortant de l'intestin grêle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Glucose</td>
+                            <td>1 g/100ml</td>
+                            <td>2,8 g/100ml</td>
+                        </tr>
+                        <tr>
+                            <td>Autres nutriments</td>
+                            <td>4 à 8 g/100ml</td>
+                            <td>34 à 40 g/100ml</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="exercise">
+                <p><strong>Questions :</strong></p>
+                <ol>
+                    <li>Dégager l'une des caractéristiques de l'intestin grêle.</li>
+                    <li>Expliquer la variation de la quantité des nutriments dans le sang sortant de l'intestin grêle après un repas.</li>
+                </ol>
+                
+                <button class="show-answer" onclick="toggleAnswer('answer7')">Voir les réponses</button>
+                
+                <div id="answer7" class="answer">
+                    <p><strong>Réponses :</strong></p>
+                    <ol>
+                        <li>L'intestin grêle est richement vascularisé (riche en vaisseaux sanguins).</li>
+                        <li>Cette variation est expliquée par le passage des nutriments de la lumière de l'intestin grêle vers le sang, ce phénomène est appelé absorption intestinale.</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="conclusion-box">
+                <h4>Conclusion :</h4>
+                <p>Absorption intestinale : passage des nutriments de l'intestin grêle vers le sang et la lymphe.</p>
+            </div>
+            
+            <h4>2. Caractéristiques de la paroi de l'intestin grêle</h4>
+            
+            <div class="experiment-box">
+                <h4>Activité :</h4>
+                <ul>
+                    <li>L'intestin grêle est considéré comme un tube cylindrique de 8m de long et 0,03m de diamètre.</li>
+                    <li>La surface interne de l'intestin grêle humain est de 300 m² équivalente à la surface d'une court de tennis.</li>
+                </ul>
+                
+                <p><strong>Calcul :</strong> Calculer la surface de l'intestin grêle en utilisant la formule suivante : S = 2 π r L</p>
+                <p>Avec π = 3,14 ; L : longueur de l'intestin (8m) ; r = rayon (0,015m)</p>
+                
+                <button class="show-answer" onclick="toggleAnswer('answer8')">Voir le calcul</button>
+                
+                <div id="answer8" class="answer">
+                    <p><strong>Calcul :</strong> S = 2 π r L = 2 x 3,14 x 0,015 x 8 = 0,754 m²</p>
+                    <p><strong>Comparaison :</strong> La surface réelle (300 m²) est très supérieure à la surface calculée (0,754 m²).</p>
+                </div>
+                
+                <p><strong>Observation au microscope :</strong> La paroi interne de l'intestin grêle présente des replis, des villosités et des microvillosités.</p>
+            </div>
+            
+            <div class="exercise">
+                <p><strong>Questions :</strong></p>
+                <ol>
+                    <li>Comparer le résultat calculé avec la surface réelle.</li>
+                    <li>Observer les coupes de l'intestin grêle à différentes échelles et indiquez les caractéristiques qui augmentent la surface d'absorption au niveau de l'intestin.</li>
+                </ol>
+                
+                <button class="show-answer" onclick="toggleAnswer('answer9')">Voir les réponses</button>
+                
+                <div id="answer9" class="answer">
+                    <p><strong>Réponses :</strong></p>
+                    <ol>
+                        <li>La surface réelle est très supérieure à la surface calculée.</li>
+                        <li>Les caractéristiques qui augmentent la surface de l'intestin grêle sont : les replis, villosités et microvillosités.</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="conclusion-box">
+                <h4>Conclusion :</h4>
+                <p>Les nombreux replis, villosités et microvillosités qui constituent la paroi intestinale, représentent donc une grande surface d'échange bien irriguée qui laisse passer les nutriments (l'eau, les sels minéraux, les vitamines, …) dans le sang et la lymphe.</p>
+                
+                <p><strong>Devenir des nutriments :</strong></p>
+                <ul>
+                    <li>Les sucres simples, les acides aminés passent dans les vaisseaux sanguins.</li>
+                    <li>Les lipides passent dans les vaisseaux lymphatiques.</li>
+                    <li>L'eau, les sels minéraux et les vitamines passent dans les vaisseaux sanguins et lymphatiques.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Pied de page -->
+    <footer>
+        <p>Polycopié de Sciences de la Vie - 1er Semestre</p>
+        <p>Aliments, Digestion et Absorption</p>
+    </footer>
+    
+    <script>
+        // Fonction pour afficher/masquer les réponses
+        function toggleAnswer(answerId) {
+            const answer = document.getElementById(answerId);
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+            } else {
+                answer.style.display = 'block';
+            }
+        }
+        
+        // Pour l'impression, afficher toutes les réponses
+        window.addEventListener('beforeprint', function() {
+            document.querySelectorAll('.answer').forEach(answer => {
+                answer.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>
